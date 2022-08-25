@@ -4,10 +4,12 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import CallRoundedIcon from "@mui/icons-material/CallRounded";
 import { ButtonBase, ToggleButton } from "@mui/material";
+import { useState } from "react";
+import Link from "next/link";
 
 export default function index() {
   return (
-    <div className="">
+    <div>
       <div className="h-[10em] relative ">
         <Image src="/images/cover.jpg" objectFit="cover" layout="fill" />
       </div>
@@ -23,56 +25,130 @@ export default function index() {
           </div>
         </div>
 
-        <div className="text-xl pt-20 font-bold  text-center">Ahmet Sahin</div>
-        <div className="text-center text-md text-gray-500">
+        <div className="text-xl pt-20 font-bold  text-center">Ahmet Şahin</div>
+        <div className="text-center text-sm text-gray-500">
           this is my personal <br /> website
         </div>
 
         <div className="relative flex gap-8 mt-2 w-max m-auto">
-          <ButtonBase sx={{ borderRadius: "50%" }}>
-            <div className="rounded-full flex items-center justify-center border-2 border-blue-300 p-3 w-max ">
-              <CallRoundedIcon className="fill-blue-300" />
-            </div>
-          </ButtonBase>
-          <ButtonBase sx={{ borderRadius: "50%" }}>
-            <div className="rounded-full flex items-center justify-center border-2 border-blue-300 p-3 w-max ">
-              <TelegramIcon className="fill-blue-300" />
-            </div>
-          </ButtonBase>
-          <ButtonBase sx={{ borderRadius: "50%" }}>
-            <div className="rounded-full flex items-center justify-center border-2 border-blue-300 p-3 w-max ">
-              <InstagramIcon className="fill-blue-300" />
-            </div>
-          </ButtonBase>
-          <ButtonBase sx={{ borderRadius: "50%" }}>
-            <div className="rounded-full flex items-center justify-center border-2 border-blue-300 p-3 w-max ">
-              <FacebookRoundedIcon className="fill-blue-300" />
-            </div>
-          </ButtonBase>
+          <Link href="tel:+9647737205456">
+            <a>
+              <ButtonBase sx={{ borderRadius: "50%" }}>
+                <div className="rounded-full active:bg-blue-600 transition-all bg-white flex items-center justify-center border-2 border-blue-400 p-3 w-max">
+                  <CallRoundedIcon className="fill-blue-400" />
+                </div>
+              </ButtonBase>
+            </a>
+          </Link>
+          <Link href="https://web.telegram.org/z/#928839577">
+            <a>
+              <ButtonBase sx={{ borderRadius: "50%" }}>
+                <div className="rounded-full active:bg-blue-600 transition-all bg-white flex items-center justify-center border-2 border-blue-400 p-3 w-max ">
+                  <TelegramIcon className="fill-blue-400" />
+                </div>
+              </ButtonBase>
+            </a>
+          </Link>
+          <Link href="https://www.instagram.com/ahmet_sahin8/">
+            <a>
+              <ButtonBase sx={{ borderRadius: "50%" }}>
+                <div className="rounded-full active:bg-blue-600 transition-all bg-white flex items-center justify-center border-2 border-blue-400 p-3 w-max ">
+                  <InstagramIcon className="fill-blue-400" />
+                </div>
+              </ButtonBase>
+            </a>
+          </Link>
+          <Link href="https://facebook.com/ahmet.tezeli.7">
+            <a>
+              <ButtonBase sx={{ borderRadius: "50%" }}>
+                <div className="rounded-full active:bg-blue-600 transition-all bg-white flex items-center justify-center border-2 border-blue-400 p-3 w-max ">
+                  <FacebookRoundedIcon className="fill-blue-400" />
+                </div>
+              </ButtonBase>
+            </a>
+          </Link>
         </div>
 
-        <div className="line my-[.5em] mx-auto w-3/6 h-1 rounded-full bg-blue-300" />
+        <div className="line my-[.8em] mx-auto w-3/6 h-1 rounded-full bg-blue-400" />
 
-        <div className="flex h-52 mx-5 insta-bg rounded-xl py-2 text-white px-3">
-          <div className="left flex flex-col">
-            <div className="text-2xl font-bold">Study</div>
-            <div className="">
-              I study anesthesia techniques at Al-Kitab University in Kirkuk. My
-              section is related to anesthesia of patients in the operating room
-              in hospitals
-            </div>
+        <div className="card-container flex  overflow-x-scroll gap-3 pl-10 snap-x">
+          <div className="min-w-[24em] snap-center flex text-sm h-max  insta-bg rounded-xl p-4 text-white relative">
+            <div className="gap-2 max-w-[16.1em] flex flex-col">
+              <div className="text-2xl font-bold">Study</div>
+              <div>
+                I study anesthesia techniques at Al-Kitab University in Kirkuk.
+                My section is related to anesthesia of patients in the operating
+                room in hospitals
+              </div>
 
-            <button
-              className="w-max rounded-xl py-1 px-2 
+              <button
+                className="w-max rounded py-1 px-2 
             bg-gradient-to-r from-purple-500 to-pink-500
             "
-            >
-              see my university
-            </button>
-          </div>
+              >
+                see my university
+              </button>
+            </div>
 
-          <div className="w-max bg-red-600 m-auto relative">
-            <img className="w-[30em]" src="/images/person-2.png" alt="" />
+            <div className="absolute bottom-0 -right-9">
+              <img
+                className="w-[13em] object-contain h-[14em]"
+                src="/images/person-2.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="min-w-[24em] snap-center flex text-sm h-max  insta-bg rounded-xl p-4 text-white relative">
+            <div className="gap-2 max-w-[16.1em] flex flex-col">
+              <div className="text-2xl font-bold">Study</div>
+              <div className="">
+                I study anesthesia techniques at Al-Kitab University in Kirkuk.
+                My section is related to anesthesia of patients in the operating
+                room in hospitals
+              </div>
+
+              <button
+                className="w-max rounded py-1 px-2 
+            bg-gradient-to-r from-purple-500 to-pink-500
+            "
+              >
+                see my university
+              </button>
+            </div>
+
+            <div className="absolute bottom-0 -right-9">
+              <img
+                className="w-[12em] object-contain h-[13em]"
+                src="/images/person-2.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="min-w-[24em] snap-center flex text-sm h-max  insta-bg rounded-xl p-4 text-white relative">
+            <div className="gap-2 max-w-[16.1em] flex flex-col">
+              <div className="text-2xl font-bold">Study</div>
+              <div className="">
+                I study anesthesia techniques at Al-Kitab University in Kirkuk.
+                My section is related to anesthesia of patients in the operating
+                room in hospitals
+              </div>
+
+              <button
+                className="w-max rounded py-1 px-2 
+            bg-gradient-to-r from-purple-500 to-pink-500
+            "
+              >
+                see my university
+              </button>
+            </div>
+
+            <div className="absolute bottom-0 -right-9">
+              <img
+                className="w-[12em] object-contain h-[13em]"
+                src="/images/person-2.png"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </div>

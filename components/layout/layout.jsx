@@ -3,7 +3,7 @@ import Bottom from "./bottom";
 
 export default function Layout({ children }) {
   return (
-    <div className="h-screen w-full">
+    <div className="h-screen w-full overflow-hidden">
       {children}
 
       <Bottom />

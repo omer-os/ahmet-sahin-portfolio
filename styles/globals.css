@@ -12,3 +12,9 @@
     #bc1888 100%
   );
 }
+
+
+
+*::-webkit-scrollbar{
+  display: none;
+}
