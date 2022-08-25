@@ -3,16 +3,10 @@ import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import { useEffect, useState } from "react";
 import ImageRoundedIcon from "@mui/icons-material/ImageRounded";
 import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from "@mui/material";
 
 export default function Bottom() {
   const [value, setValue] = useState(0);
-  const router = useRouter()
-
-
-  
-  
 
   return (
     <div className="fixed bottom-0 left-0 w-full">
@@ -24,35 +18,23 @@ export default function Bottom() {
       >
         <BottomNavigationAction
           label="About Me"
-          icon={
-            <Link href="/">
-              <a>
-                <HomeRoundedIcon />
-              </a>
-            </Link>
-          }
+          icon={<HomeRoundedIcon />}
+          component={Link}
+          href="/"
         />
 
         <BottomNavigationAction
           label="Gallery"
-          icon={
-            <Link href="/gallery">
-              <a>
-                <ImageRoundedIcon />
-              </a>
-            </Link>
-          }
+          icon={<ImageRoundedIcon />}
+          component={Link}
+          href="/gallery"
         />
 
         <BottomNavigationAction
           label="my music"
-          icon={
-            <Link href="/my-music">
-              <a>
-                <HeadphonesRoundedIcon />
-              </a>
-            </Link>
-          }
+          icon={<HeadphonesRoundedIcon />}
+          component={Link}
+          href="/my-music"
         />
       </BottomNavigation>
     </div>

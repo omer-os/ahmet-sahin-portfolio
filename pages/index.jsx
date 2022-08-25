@@ -6,15 +6,27 @@ import CallRoundedIcon from "@mui/icons-material/CallRounded";
 import { ButtonBase, ToggleButton } from "@mui/material";
 import { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function index() {
   return (
     <div>
-      <div className="h-[10em] relative ">
+      <motion.div
+        animate={{
+          opacity: [0, 1],
+        }}
+        className="h-[10em] relative "
+      >
         <Image src="/images/cover.jpg" objectFit="cover" layout="fill" />
-      </div>
+      </motion.div>
 
-      <div className="w-full bg-white relative -top-5 rounded-t-3xl">
+      <motion.div
+        animate={{
+          top: [0, -22],
+          opacity: [0, 1],
+        }}
+        className="w-full bg-white relative  rounded-t-3xl"
+      >
         <div className="absolute -top-16 left-[50%] -translate-x-2/4">
           <div className="w-[9em] h-[9em] m-auto relative">
             <Image
@@ -31,47 +43,60 @@ export default function index() {
         </div>
 
         <div className="relative flex gap-8 mt-2 w-max m-auto">
-          <Link href="tel:+9647737205456">
-            <a>
-              <ButtonBase sx={{ borderRadius: "50%" }}>
-                <div className="rounded-full active:bg-blue-600 transition-all bg-white flex items-center justify-center border-2 border-blue-400 p-3 w-max">
-                  <CallRoundedIcon className="fill-blue-400" />
-                </div>
-              </ButtonBase>
-            </a>
-          </Link>
-          <Link href="https://web.telegram.org/z/#928839577">
-            <a>
-              <ButtonBase sx={{ borderRadius: "50%" }}>
-                <div className="rounded-full active:bg-blue-600 transition-all bg-white flex items-center justify-center border-2 border-blue-400 p-3 w-max ">
-                  <TelegramIcon className="fill-blue-400" />
-                </div>
-              </ButtonBase>
-            </a>
-          </Link>
-          <Link href="https://www.instagram.com/ahmet_sahin8/">
-            <a>
-              <ButtonBase sx={{ borderRadius: "50%" }}>
-                <div className="rounded-full active:bg-blue-600 transition-all bg-white flex items-center justify-center border-2 border-blue-400 p-3 w-max ">
-                  <InstagramIcon className="fill-blue-400" />
-                </div>
-              </ButtonBase>
-            </a>
-          </Link>
-          <Link href="https://facebook.com/ahmet.tezeli.7">
-            <a>
-              <ButtonBase sx={{ borderRadius: "50%" }}>
-                <div className="rounded-full active:bg-blue-600 transition-all bg-white flex items-center justify-center border-2 border-blue-400 p-3 w-max ">
-                  <FacebookRoundedIcon className="fill-blue-400" />
-                </div>
-              </ButtonBase>
-            </a>
-          </Link>
+          {[
+            {
+              link: "tel:+9647737205456",
+              icon: <CallRoundedIcon className="fill-blue-400" />,
+            },
+            {
+              link: "https://web.telegram.org/z/#928839577",
+              icon: <TelegramIcon className="fill-blue-400" />,
+            },
+            {
+              link: "https://www.instagram.com/ahmet_sahin8/",
+              icon: <InstagramIcon className="fill-blue-400" />,
+            },
+            {
+              link: "https://facebook.com/ahmet.tezeli.7",
+              icon: <FacebookRoundedIcon className="fill-blue-400" />,
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={"icon " + index}
+              className="relative"
+              animate={{
+                top: [20, 0],
+                opacity: [0, 1],
+              }}
+              transition={{
+                delay: index * 0.3 + 1,
+              }}
+            >
+              <Link href={item.link}>
+                <a>
+                  <ButtonBase sx={{ borderRadius: "50%" }}>
+                    <div className="rounded-full active:bg-blue-600 transition-all bg-white flex items-center justify-center border-2 border-blue-400 p-3 w-max">
+                      {item.icon}
+                    </div>
+                  </ButtonBase>
+                </a>
+              </Link>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="line my-[.8em] mx-auto w-3/6 h-1 rounded-full bg-blue-400" />
+        <div className="line my-[1em] mx-auto w-3/6 h-1 rounded-full bg-blue-400" />
 
-        <div className="card-container flex  overflow-x-scroll gap-3 pl-10 snap-x">
+        <motion.div
+          animate={{
+            paddingLeft: ["40em", "1em"],
+            opacity: [0, 1],
+          }}
+          transition={{
+            delay: 0.5,
+          }}
+          className="card-container flex  overflow-x-scroll gap-3 pl-10 snap-x"
+        >
           <div className="min-w-[24em] snap-center flex text-sm h-max  insta-bg rounded-xl p-4 text-white relative">
             <div className="gap-2 max-w-[16.1em] flex flex-col">
               <div className="text-2xl font-bold">Study</div>
@@ -150,8 +175,8 @@ export default function index() {
               />
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
