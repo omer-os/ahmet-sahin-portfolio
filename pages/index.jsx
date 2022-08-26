@@ -97,7 +97,7 @@ export default function index() {
           }}
           className="card-container flex  overflow-x-scroll gap-3 pl-10 snap-x"
         >
-          <div className="min-w-[24em] snap-center flex text-sm h-max  insta-bg rounded-xl p-4 text-white relative">
+          <div className="min-w-[24em] snap-center flex text-sm h-[15em] insta-bg rounded-xl p-4 text-white relative">
             <div className="gap-2 max-w-[16.1em] flex flex-col">
               <div className="text-2xl font-bold">Study</div>
               <div>
@@ -123,48 +123,19 @@ export default function index() {
               />
             </div>
           </div>
-          <div className="min-w-[24em] snap-center flex text-sm h-max  insta-bg rounded-xl p-4 text-white relative">
+          <div className="min-w-[24em] snap-center flex text-sm h-[15em] insta-bg rounded-xl p-4 text-white relative">
             <div className="gap-2 max-w-[16.1em] flex flex-col">
-              <div className="text-2xl font-bold">Study</div>
-              <div className="">
-                I study anesthesia techniques at Al-Kitab University in Kirkuk.
-                My section is related to anesthesia of patients in the operating
-                room in hospitals
+              <div className="text-2xl font-bold">Hobbies</div>
+              <div>
+                I love music and I play musical instruments such as guitar and
+                saz. I also like to draw a lot and get creative with it.
               </div>
 
-              <button
-                className="w-max rounded py-1 px-2 
-            bg-gradient-to-r from-purple-500 to-pink-500
-            "
-              >
-                see my university
-              </button>
-            </div>
-
-            <div className="absolute bottom-0 -right-9">
-              <img
-                className="w-[12em] object-contain h-[13em]"
-                src="/images/person-2.png"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="min-w-[24em] snap-center flex text-sm h-max  insta-bg rounded-xl p-4 text-white relative">
-            <div className="gap-2 max-w-[16.1em] flex flex-col">
-              <div className="text-2xl font-bold">Study</div>
-              <div className="">
-                I study anesthesia techniques at Al-Kitab University in Kirkuk.
-                My section is related to anesthesia of patients in the operating
-                room in hospitals
-              </div>
-
-              <button
-                className="w-max rounded py-1 px-2 
-            bg-gradient-to-r from-purple-500 to-pink-500
-            "
-              >
-                see my university
-              </button>
+              <Link href="/my-music">
+                <a className="w-max rounded py-1 px-2  bg-gradient-to-r from-purple-500 to-pink-500">
+                  see my music
+                </a>
+              </Link>
             </div>
 
             <div className="absolute bottom-0 -right-9">
